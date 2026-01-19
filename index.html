@@ -5,9 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>
-        hello world!
-    </h1>
+<body class="overflow-x-hidden">
+
+    <nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold">Tech<span class="gradient-text">Wave</span></div>
+        
+        <div class="hidden lg:flex space-x-8 text-sm font-medium">
+            <a href="#" class="hover:text-pink-400 transition">About</a>
+            <a href="#" class="hover:text-pink-400 transition">Episodes</a>
+            <a href="#" class="hover:text-pink-400 transition">Host</a>
+        </div>
+
+        <div class="flex items-center">
+            <button class="hidden lg:block btn-gradient px-6 py-2 rounded-full text-sm font-bold">Subscribe</button>
+            <button class="lg:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative py-20 px-6 text-center overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-30">
+        <img 
+            src="hero-bg.png" 
+            alt="decorative wave"
+            class="w-4/4  object-contain"
+            loading="lazy"
+        >
+    </div>
 </body>
 </html>
