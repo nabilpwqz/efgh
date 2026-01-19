@@ -30,6 +30,21 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
+        
+@keyframes mic-wave {
+    0%   { transform: scale(1) rotate(0deg); }
+    25%  { transform: scale(1.03) rotate(1deg); }
+    50%  { transform: scale(1.06) rotate(0deg); }
+    75%  { transform: scale(1.03) rotate(-1deg); }
+    100% { transform: scale(1) rotate(0deg); }
+}
+
+@keyframes ring-pulse {
+    0%   { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+
+
     </style>
 </head>
 <body class="overflow-x-hidden">
@@ -67,21 +82,30 @@
 
 
     <div class="relative inline-block mb-8">
-    <button class="w-32 h-32 md:w-48 md:h-48 flex items-center justify-center relative rounded-full 
-                   transition-transform duration-100 ease-in-out
-                   hover:scale-105 hover:rotate-0.1 hover:shadow-md">
+    
+    <!-- Pulse Ring -->
+    <span class="absolute inset-0 rounded-full border border-purple-500/50
+                 animate-[ring-pulse_1.5s_ease-out_infinite]"></span>
+
+    <button class="w-32 h-32 md:w-48 md:h-48 flex items-center justify-center relative rounded-full
+                   animate-[mic-wave_1.2s_ease-in-out_infinite]">
+        
         <!-- Background Circle -->
-        <img src="hero-circle.png" alt="Background" class="w-full h-full object-contain shadow-2xl rounded-full">
+        <img src="hero-circle.png"
+             class="w-full h-full object-contain shadow-2xl rounded-full">
         
         <!-- Microphone -->
-        <img src="microphone.png" alt="Microphone" class="absolute w-1/2 h-1/2 object-contain pointer-events-none">
+        <img src="microphone.png"
+             class="absolute w-1/2 h-1/2 object-contain">
     </button>
-    
+
     <!-- New Badge -->
     <span class="absolute top-1 right-1 bg-green-400 text-black text-xs font-bold px-2 py-1 rounded-full animate-pulse">
         NEW
     </span>
 </div>
+
+
 
     <!-- Heading -->
     <h1 class="text-4xl md:text-6xl font-bold mb-4">
